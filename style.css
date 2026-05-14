@@ -1,11 +1,54 @@
-/* Your CSS styles go here */
+/* style.css */
+
+/* --- 1. Base Styles (Default for large screens or mobile-first approach) --- */
 body {
     font-family: sans-serif;
-    background-color: #f4f4f9;
-    text-align: center;
-    padding-top: 20px;
+    margin: 0;
+    padding: 0;
+    /* Assume this is the general, large-screen layout */
 }
 
-#message {
-    color: #333;
+/* Example: A container that uses flexbox */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Important: allows items to wrap to the next line */
+    justify-content: center;
+}
+
+/* Example: How items behave on larger screens */
+.card {
+    flex: 1 1 300px; /* Grow, Shrink, Basis: Will be at least 300px wide */
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+
+/* ====================================================== */
+/* --- 2. Media Queries for Responsiveness --- */
+/* ====================================================== */
+
+/* For tablets (screens up to 1024px wide) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+}
+
+/* For smaller tablets/large phones (screens up to 768px wide) */
+@media (max-width: 768px) {
+    /* You can adjust margins or font sizes here */
+    body {
+        padding: 10px;
+    }
+}
+
+/* For mobile phones (screens up to 480px wide) */
+@media (max-width: 480px) {
+    .card {
+        /* Force cards to take up more space when very narrow */
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
 }
