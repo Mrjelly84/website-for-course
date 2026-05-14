@@ -1,0 +1,11 @@
+/* Your CSS styles go here */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f9;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#message {
+    color: #333;
+}
